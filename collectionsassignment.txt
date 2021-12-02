@@ -1,0 +1,181 @@
+1. Declare suitable collection at the position //insert code here
+
+class CollectionTypes {
+ public static void main(String[ ] args) {
+ // insert code here
+Queue<String> queue = new priorityQueue<String>();
+ x.add(“one”);
+ x.add(“two”);
+ x.add(“one”);
+ System.out.println(x.poll());
+ }
+}
+
+2 import java.util.ArrayList;
+import java.util.List;
+
+public class Tester {
+        public static void main(String [] args) {
+            List<Object> list1 = new ArrayList<Object>();
+            List<Object> list2= list1;
+            list2.add(12);
+            System.out.println(list2.size());
+        }
+    }
+
+
+3. What is the result of compiling and running the following program?
+public class Tester {
+public static void main(String[] args) {
+List<String> list1 = new ArrayList<String>();//line 1
+List<Object> list2 = list1;//line 2
+list2.add(new Integer(12));//line 3    //depreciated
+System.out.println(list2.size());//line 4
+}
+}
+ans: Error we cannot populate list1 string type to object
+import java.util.*;
+public class TestGenericConversion {
+public static void main(String s[ ]){
+List<String> list=new ArrayList<String>( );
+list.add("one");
+list.add(2);
+System.out.println(list.get(0).length(); }
+} }
+ans: Compile time Error:→ list.add(int) but type is String for list
+Java Collections Exercise 2012
+
+4  
+public class Test {
+    public static void main(String[] args){
+        Integer a=new Integer(4);
+        Integer b=new Integer(8);
+        Integer c=new Integer(4);
+        HashSet hs=new HashSet();
+        hs.add(a);
+        hs.add(a);
+        hs.add(a);
+        System.out.println(hs);
+
+    }
+}
+
+utput:[4]
+---------------------------
+
+5 public class arraylisRemove {
+    public static void main(String[] args){
+        ArrayList<String> list1=new ArrayList<String>();
+        list1.add("sam");
+        list1.add("ram");
+        list1.add("cat");
+        list1.add("fish");
+        System.out.println("before removal"+list1);
+        ArrayList<String> list2=new ArrayList<String>();
+        list2.add("sam");
+        list2.add("Dog");
+        list2.add("cat");
+        list2.add("rabbit");
+        list2.add("lion");
+        System.out.println("before removal"+list2);
+        list2.removeAll(list1);
+        System.out.println("After removal"+list2);
+
+    }
+}
+----------------
+6  import java.util.ArrayList;
+import java.util.Collections;
+
+public class SortArrayList {
+    public static void main(String[] args){
+        ArrayList<String> demo=new ArrayList<String>();
+        demo.add("mysore");
+        demo.add("hyd");
+        demo.add("bangalore");
+        demo.add("hampi");
+        System.out.println("Before sorting"+demo);
+        Collections.sort(demo);
+        System.out.println("After sorting"+demo);
+    }
+}
+
+
+------------------
+7  import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class UniqueCollection {
+    public static void main(String[] args){
+        ArrayList<String> list1=new ArrayList<>();
+        list1.add("rani");
+        list1.add("vivek");
+        list1.add("hani");
+        list1.add("ani");
+        list1.add("ani");
+        list1.add("rani");
+        Set<String> list2=new TreeSet<>(list1);
+        System.out.println("ArrayList UNIQUE ELEMENTS");
+        for (String str:list2){
+            System.out.println(str);
+        }
+
+
+    }
+}
+--------------------------
+8 import java.util.HashMap;
+import java.util.Set;
+
+public class HashMapToReturnKeys {
+    public static void main(String[] args)
+    {
+        HashMap<String,String> demo=new HashMap<>();
+        demo.put("lang","java");
+        demo.put("book","animalLove");
+        demo.put("colD","Ice");
+        Set<String> getKeys=demo.keySet();
+        System.out.println("Keys are:"+getKeys);
+
+    }
+}
+
+--------------------------
+9 import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateFormat {
+    public static void main(String[] args){
+
+        System.out.println(getDate());
+    }
+    public static String getDate(){
+        SimpleDateFormat format=new SimpleDateFormat("dd/MM/yyyy:hh:mm:ss");
+        Date date=new Date();
+        String strDate=format.format(date);
+        return strDate;
+    }
+}
+
+--------------------------
+10 import java.time.LocalDate;
+import java.time.Period;
+import java.util.Scanner;
+
+public class CalculateAgeUsinDob {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Please enter Dob (yyyy-mm-dd format only)");
+        String str=sc.nextLine();
+        LocalDate dob;
+        dob=LocalDate.parse(str);
+        System.out.println("Age is:"+calcAge(dob));
+    }
+    static  int calcAge(LocalDate dob){
+        LocalDate cur_date=LocalDate.now();
+        int age= Period.between(dob,cur_date).getYears();
+        return age;
+    }
+}
+
